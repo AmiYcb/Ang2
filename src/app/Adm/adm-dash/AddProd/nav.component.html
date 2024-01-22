@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title> Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="MyraStudio" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="/assets/css/theme.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+
+    
+
+    <!-- Head Js -->
+    <script src="/assets/js/head.js"></script>
+    <script src="assets/js/app.js"></script>
+
+
+    
+</head>
+
+
+<body>
+
+    <div class="app-wrapper">
+
+        <!-- Sidenav Menu Start -->
+        <div class="app-menu">
+
+            <!-- Brand Logo -->
+            <a href="/assets/" class="logo-box">
+                <img src="/assets/images/logo-light.png" class="logo-light h-6" alt="Light logo">
+                <img src="/assets/images/logo-dark.png" class="logo-dark h-6" alt="Dark logo">
+            </a>
+
+            <!--- Menu -->
+            <div data-simplebar>
+                <ul class="menu" data-fc-type="accordion">
+                    <li class="menu-title">Menu</li>
+
+                    <li class="menu-item">
+                        <a href="/dash" class="menu-link waves-effect">
+                            <span class="menu-icon"><i class="ph-duotone ph-house"></i></span>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/dash" class="menu-link waves-effect">
+                            <span class="menu-icon"><i class="ph-duotone ph-question"></i></span>
+                            <span class="menu-text"> Emails </span>
+                            <span class="badge bg-primary rounded ms-auto">01</span>
+                        </a> 
+                    </li>
+
+                    <li class="menu-title">Custom</li>
+
+                    <li class="menu-item collapsed" data-fc-type="collapse">
+                       
+                           <p class="menu-link waves-effect">
+                            <span class="menu-icon"><i class="ph-duotone ph-file"></i></span>
+                            <span class="menu-text">Tables</span>
+                        </p> 
+                            <span class="menu-arrow"></span>
+                     
+                        <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a href="/prod" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Products</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="pages-invoice.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Brands</span>
+                                </a>
+                            </li>
+
+
+                            <li class="menu-item">
+                                <a href="pages-invoice.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Alias</span>
+                                </a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+
+
+                    
+
+                    <li class="menu-item collapsed" data-fc-type="collapse">
+                       
+                        <p class="menu-link waves-effect">
+                            <span class="menu-icon"><i class="ph-duotone ph-sign-in"></i></span>
+                            <span class="menu-text"> Add </span>
+                           </p>
+                           <span class="menu-arrow"></span>
+
+                     <ul class="sub-menu">
+                         <li class="menu-item">
+                             <a href="/prod" class="menu-link">
+                                 <span class="menu-dot"></span>
+                                 <span class="menu-text">Product</span>
+                             </a>
+                         </li>
+                         <li class="menu-item">
+                            <a href="/brand" class="menu-link">
+                                <span class="menu-dot"></span>
+                                <span class="menu-text">Brands</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="menu-item">
+                            <a href="/alias" class="menu-link">
+                                <span class="menu-dot"></span>
+                                <span class="menu-text">Alias</span>
+                            </a>
+                        </li>
+                        
+                     </ul>
+                 </li>
+
+                 <span class="menu-arrow"></span>
+
+                 
+            
+                 
+
+                 
+
+                    
+                 
+
+                 
+                 
+                        
+                  
+
+                  
+                 
+                 
+
+                   
+                 
+
+                   
+                 
+                          
+                 
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ph-duotone ph-seal-check"></i>
+                            </span>
+                            <span class="menu-text"> Badge Items </span>
+                            <span class="badge bg-danger rounded ms-auto">Hot</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Sidenav Menu End  -->
+
+
+
+
+
+
+        <div class="app-content">
+
+            <!-- Topbar Start -->
+            <header class="app-header flex items-center px-5 gap-4">
+
+                <!-- Brand Logo -->
+
+
+
+
+                <!-- Sidenav Menu Toggle Button -->
+
+
+             
+                <button id="button-toggle-menu" class="nav-link p-2 waves-effect me-auto">
+
+                    <span class="flex items-center justify-center h-6 w-6">
+                    </span>
+                </button>
+                
+
+                <!-- Topbar Search -->
+                <div class="md:flex hidden items-center relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <i class="ph ph-magnifying-glass text-base"></i>
+                    </div>
+                    <input type="search" class="form-input px-8 rounded-full  bg-gray-500/10 border-transparent focus:border-transparent" placeholder="Search...">
+                    <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
+                    </button>
+                </div>
+
+                <!-- Language Dropdown Button -->
+                <div class="relative">
+                    <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link p-2 waves-effect fc-dropdown">
+                        <span class="flex items-center justify-center h-6 w-6">
+
+                        </span>
+                    </button>
+                 
+                    
+                </div>
+
+               
+                
+                
+                <!-- Profile Dropdown Button -->
+                <div class="relative">
+                    <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link flex items-center gap-2.5 waves-effect p-2">
+                        <img src="assets/images/users/avatar-6.jpg" alt="user-image" class="rounded-full h-8 w-8">
+                        <span class="md:flex items-center hidden">
+                            <span class="font-medium text-base">Jamie D.</span>
+                            <i class='ph ph-chevron-down'></i>
+                        </span>
+                    </button>
+                    <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-40 z-50 transition-[margin,opacity] duration-300 mt-2 bg-white shadow-lg border rounded-lg p-2">
+                        <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100" href="#">
+                            Inbox
+                        </a>
+                        <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100" href="#">
+                            Profile
+                        </a>
+                        <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100" href="#">
+                            Settings
+                        </a>
+                        <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100" href="#">
+                            Lock Account
+                        </a>
+                        <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100" href="#">
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Topbar End -->
+
+            <main class="p-6">
+
+                <!-- Page Title Start -->
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-slate-900 text-lg font-medium">Elements</h4>
+
+                    <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                        <a href="#" class="text-sm font-medium text-slate-700">Lunoz</a>
+                        <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                        <a href="#" class="text-sm font-medium text-slate-700">Forms</a>
+                        <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                        <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Elements</a>
+                    </div>
+                </div>
+
+
+              <!-- Page Title End -->
+
+            
+          
+              
+
+
+                <!-- Page Title End -->
+
+                <div class="flex flex-col gap-6">
+                    <div class="card">
+                        <div class="p-6">
+                            <h4 class="card-title mb-4">Add a product</h4>
+
+                            <form (submit)="onSubmit()" #myForm="ngForm">
+                                <div class="grid lg:grid-cols-2 gap-6">
+
+                                <div class="wrapper">
+                                    <label for="simpleinput" class="text-gray-800 text-sm font-medium inline-block mb-2">Code Bar</label>
+                                    <input type="text" name="barcode" id="simpleinput" [(ngModel)]="scannedData" class="form-input" placeholder="barcode" value="{{ modalResult }}">
+                                    
+                                    <button  title="scanner"  (click)="openModal()"> <i class="fa fa-camera"></i></button>
+
+                                </div>
+
+                                <div>
+                                    <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Image</label>
+                                    <input type="file" id="example-email" [(ngModel)]="image"  (change)="onFileSelected($event)" accept="image/*" name="image" class="form-input">
+                                  </div>
+                                  
+
+                                <div>
+                                    <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Libelle </label>
+                                    <input type="text" id="example-email" [(ngModel)]="libelle" name="libelle" class="form-input" placeholder="Libelle">
+                                </div>
+
+                                <div>
+                                    <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
+                                    <input type="text" id="example-password" [(ngModel)]="reasons" class="form-input" name="reasons" placeholder="description">
+                                </div>
+
+                               
+                                
+
+            
+
+                                <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Alternatives</label>
+                                    <select class="form-select" name="alternative" [(ngModel)]="alternative" id="example-select">
+                                        <option>1</option>
+                                        <option value="2">2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+
+                                <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Brands</label>
+                                    <select class="form-select" name="brand" [(ngModel)]="brand" id="example-select">
+                                        <option>1</option>
+                                        <option value="2">2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+
+                                <br>
+                                <div>
+                                    <button class="class-form btn-primary" id="example-number" type="submit">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div> 
+                
+                <!-- end row -->
+
+
+            <body>
+                <div class="app-wrapper">
+                    <!-- Your existing HTML content -->
+            
+                    <!-- Scripts at the end of the body -->
+                    <script src="assets/libs/jquery/jquery.min.js"></script>
+                    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+                    <script src="assets/libs/node-waves/waves.min.js"></script>
+                    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
+            
+                    <!-- App Js -->
+                    <script src="assets/js/app.js"></script>
+            
+                    <!-- Apexcharts js -->
+                    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+            
+                    <!-- Morris Js-->
+                    <script src="assets/libs/morris.js/morris.min.js"></script>
+            
+                    <!-- Raphael Js-->
+                    <script src="assets/libs/raphael/raphael.min.js"></script>
+            
+                    <!-- Dashboard Project Page js -->
+                    <script src="assets/js/pages/dashboard.js"></script>
+                </div>
+              </body>
+
+
+
+
+              
+
+
+
+            
