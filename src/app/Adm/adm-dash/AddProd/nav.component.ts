@@ -35,42 +35,6 @@ export class NavComponent implements OnInit {
   }
 
 
-  onFileSelected(event: any): void {
-    const fileInput = event.target as HTMLInputElement;
-
-    if (fileInput.files && fileInput.files[0]) {
-      this.image = fileInput.files[0];
-    }
-  }
-
-
-  onSubmit(): void {
-    // First, upload the image
-    if (this.image) {
-      this.uploadImage().subscribe((imagePath: string) => {
-        // Once the image is uploaded, set the imagePath in the form
-        this.form.patchValue({ image: imagePath });
-
-        // Now, you can submit the rest of the form data
-        this.submitForm();
-      });
-    } else {
-      // If there's no image, just submit the form data
-      this.submitForm();
-    }
-  }
-  uploadImage() {
-    const formData = new FormData();
-    formData.append('image', this.image as Blob);
-
-    return this.http.post<any>('/api/upload-image', formData); // Replace with your server endpoint
-  }
-
-  submitForm() {
-    // Now, you can submit the entire form data to your server
-    console.log('Form data:', this.form.value);
-    // Add your HTTP request to submit form data to the server here
-  }
 
   openModal(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
