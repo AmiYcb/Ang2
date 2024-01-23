@@ -119,16 +119,21 @@
   border-right: none;
 }
 
+
+
+
 .feeling-lucky-btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: -1px; /* To close the gap between the button and the input */
 }
 
+.invalid-input {
+  border: 1px solid red;
+}
 
 
-
-
+/* 
 .wrapper button {
   background: white;
   border-radius: 50px;
@@ -136,4 +141,4 @@
   position: absolute;
   bottom: 30%;
   left: 45%;
-}
+} */

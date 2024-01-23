@@ -1,0 +1,32 @@
+<app-navbar>  </app-navbar>
+  
+
+  <body>
+
+
+    <div id="google-container">
+      <div id="search-container">
+        <img class="google-logo" src="assets/images/BoyC.jpg" alt="Google Logo">
+        <br>
+        <form>
+          <input type="text"  placeholder="Search to Quati3 ...." class="search-box" name="q" value="{{modalResult}}" title="Search Google">
+          <br>
+          
+          <div class="search-buttons">
+            <button type="submit" class="google-search-btn">Quati3 Search 
+              </button>
+              <button type="button" (click)="openModal()" class="feeling-lucky-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Search by barcode <i class="fa fa-camera"></i> </button>
+
+            </div>
+        </form>
+      </div>
+    </div>
+  
+  
+    <!-- Additional HTML content if needed -->
+  
+
+
+  
+
+  </body>

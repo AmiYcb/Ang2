@@ -28,12 +28,14 @@ import { EditprodComponent } from 'src/app/Adm/adm-dash/editprod/editprod.compon
     ModalComponent,
     ProdTabComponent,
     ConfirmationDialogComponent,
-    EditprodComponent
+    EditprodComponent,
+
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
     MatTableModule,

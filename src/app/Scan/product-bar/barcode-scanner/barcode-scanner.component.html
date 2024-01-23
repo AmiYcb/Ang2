@@ -1,0 +1,13 @@
+<div style="text-align: center; margin-top: 20px;">
+    <zxing-scanner
+      [(device)]="selectedDevice"
+      [formats]="supportedFormats"
+      (scanSuccess)="onScanSuccess($event)"
+      style="width: 300px; height: 300px; border: 1px solid #ccc;"
+    ></zxing-scanner>
+  </div>
+  
+  <div *ngIf="scannedData" style="text-align: center; margin-top: 20px;">
+    <p style="font-size: 18px; color: green;">Scanned Barcode: {{ scannedData }}</p>
+  </div>
+  
