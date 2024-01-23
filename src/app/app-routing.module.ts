@@ -4,6 +4,7 @@ import { TabComponent } from './tab/tab/tab.component';
 import { Dash2Component } from './Adm/adm-dash/dash2/dash2.component';
 import { ProdTabComponent } from './Adm/adm-dash/prod-tab/prod-tab.component';
 import { NavComponent } from './Adm/adm-dash/AddProd/nav.component';
+import { EditprodComponent } from './Adm/adm-dash/editprod/editprod.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"", component:Dash2Component },
   {path:"Liste des produits", component:ProdTabComponent },
   {path:"aj", component:NavComponent },
+  { path: 'edit/:id', component: EditprodComponent },
 
 
 

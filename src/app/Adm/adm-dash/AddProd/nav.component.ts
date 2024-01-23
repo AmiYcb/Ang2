@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BarcodeFormat } from '@zxing/library';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
 import { ProdService } from './prod.service';
+import { Router } from '@angular/router';
 // import { ProductSService } from '../product-s.service';
 
 
@@ -48,8 +49,24 @@ export class NavComponent implements OnInit {
   }
 
 
+  brands: any[] = []; // Change the type according to your actual brand structure
+  bran?: any;
+  getBrands() {
+    this.prodService.getAllBrands().subscribe((brand: any) => {
+      console.log(brand); // Log the data to the console
+      this.brands = brand;
+    });
+  }
   
   
+  alts: any[] = []; // Change the type according to your actual brand structure
+  alt?: any;
+  getAlts() {
+    this.prodService.getAllAlt().subscribe((alt: any) => {
+      console.log(alt); // Log the data to the console
+      this.alts = alt;
+    });
+  }
   
  barcode !:any
 
@@ -89,18 +106,15 @@ onFileSelected(event:any) {
   form!: FormGroup;
 
   
-  constructor(private prodService: ProdService,private dialog: MatDialog,private fb: FormBuilder, private http: HttpClient) {
-    this.form = this.fb.group({
-      barcode: '',
-      image: null,
-      libelle: '',
-      reasons: '',
-      alternative: '',
-      brand: '',
-    });
+  constructor(private router: Router,private prodService: ProdService,private dialog: MatDialog,private fb: FormBuilder, private http: HttpClient) {
+   
   }
 
 
+  openEdit(product: any): void {
+    // Use Angular Router to navigate to the EditCompo component and pass data
+    this.router.navigate(['/edit-compo', product.id]);
+  }
 
   openModal(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
@@ -118,7 +132,8 @@ prod!:object;
   
 
   ngOnInit(): void {
-    console.log("hayt")
+    this.getBrands();
+    this.getAlts()
   }
 
  

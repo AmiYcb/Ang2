@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { TabService } from 'src/app/tab/tab.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-prod-tab',
@@ -22,7 +23,12 @@ export class ProdTabComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private prodService: TabService, private httpClient: HttpClient,public dialog: MatDialog) {}
+  constructor(private router:Router,private prodService: TabService, private httpClient: HttpClient,public dialog: MatDialog) {}
+
+  Edit(productId: string): void {
+    // Navigate to the edit route with the specific ID
+    this.router.navigate(['edit', productId]);
+  }
 
   openConfirmationDialog(id: string): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {

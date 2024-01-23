@@ -17,6 +17,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { ProdTabComponent } from 'src/app/Adm/adm-dash/prod-tab/prod-tab.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
+import { EditprodComponent } from 'src/app/Adm/adm-dash/editprod/editprod.component';
 
 
 
@@ -26,7 +27,8 @@ import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog
     NavComponent,
     ModalComponent,
     ProdTabComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    EditprodComponent
   ],
   imports: [
     CommonModule,

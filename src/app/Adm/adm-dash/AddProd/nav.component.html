@@ -324,11 +324,8 @@
                                 <div>
                                     <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Alternatives</label>
                                     <select class="form-select" name="alternative" [(ngModel)]="alternative" id="example-select">
-                                        <option>1</option>
-                                        <option value="2">2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option value="" disabled selected>Select an alternative</option>
+                                        <option *ngFor="let alt of alts" [value]="alt.id">{{ alt.replacementName }}</option>
                                     </select>
                                 </div>
 
@@ -336,12 +333,10 @@
                                 <div>
                                     <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Brands</label>
                                     <select class="form-select" name="brand" [(ngModel)]="brand" id="example-select">
-                                        <option>1</option>
-                                        <option value="2">2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                        <option value="" disabled selected>Select a brand</option>
+                                        <option *ngFor="let brand of brands" [value]="brand.id">{{ brand.brandName }}</option>
+                                      </select>
+                                      
                                 </div>
 
                                 <br>

@@ -13,6 +13,7 @@ import { TabModule } from './tab/tab/tab.module';
 import { Dash2Component } from './Adm/adm-dash/dash2/dash2.component';
 import { ProdTabComponent } from './Adm/adm-dash/prod-tab/prod-tab.component';
 import { ModalComponent } from './sharing/modal/modal.component';
+import { EditprodComponent } from './Adm/adm-dash/editprod/editprod.component';
 
 
 @NgModule({

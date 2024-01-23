@@ -53,9 +53,9 @@
                         <a href="/dash" class="menu-link waves-effect">
                             <span class="menu-icon"><i class="ph-duotone ph-house"></i></span>
                             <span class="menu-text"> Dashboard </span>
-
                         </a>
                     </li>
+
                     <li class="menu-item">
                         <a href="/dash" class="menu-link waves-effect">
                             <span class="menu-icon"><i class="ph-duotone ph-question"></i></span>
@@ -63,7 +63,6 @@
                             <span class="badge bg-primary rounded ms-auto">01</span>
                         </a> 
                     </li>
-                   
 
                     <li class="menu-title">Custom</li>
 
@@ -137,7 +136,6 @@
                      </ul>
                  </li>
 
-
                  <span class="menu-arrow"></span>
 
                  
@@ -204,13 +202,14 @@
                     <span class="flex items-center justify-center h-6 w-6">
                     </span>
                 </button>
+                
 
                 <!-- Topbar Search -->
                 <div class="md:flex hidden items-center relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                         <i class="ph ph-magnifying-glass text-base"></i>
                     </div>
-                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="search" class="form-input px-8 rounded-full  bg-gray-500/10 border-transparent focus:border-transparent" placeholder="Search...">
+                    <input type="search" class="form-input px-8 rounded-full  bg-gray-500/10 border-transparent focus:border-transparent" placeholder="Search...">
                     <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
                     </button>
                 </div>
@@ -260,17 +259,19 @@
             <!-- Topbar End -->
 
             <main class="p-6">
-            <div class="flex justify-between items-center mb-6">
-                <h4 class="text-slate-900 text-lg font-medium">Dashboard</h4>
 
-                <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
-                  
-                    <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
-                    <a href="#" class="text-sm font-medium text-slate-700">Dashboard</a>
-                    <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
-                    <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Products</a>
+                <!-- Page Title Start -->
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-slate-900 text-lg font-medium">Elements</h4>
+
+                    <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                        <a href="#" class="text-sm font-medium text-slate-700">Lunoz</a>
+                        <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                        <a href="#" class="text-sm font-medium text-slate-700">Forms</a>
+                        <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                        <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Elements</a>
+                    </div>
                 </div>
-            </div>
 
 
               <!-- Page Title End -->
@@ -282,62 +283,80 @@
 
                 <!-- Page Title End -->
 
-                <!-- Card Section Start -->
-               
-                  
-                  <div class="mat-elevation-z8">
-                    <table mat-table [dataSource]="dataSource" matSort>
-                  
-                      <!-- ID Column -->
-                      <ng-container matColumnDef="imageUrl">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
-                        <td mat-cell *matCellDef="let product">
-                          <img src="{{product.imageUrl}}" style="width: 100px; height: 100px;">
-                        </td>
-                      </ng-container>
-                      
-                  
-                      <!-- Progress Column -->
-                      <ng-container matColumnDef="libelle">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Libelle </th>
-                        <td mat-cell *matCellDef="let product"> {{product.libelle}} </td>
-                      </ng-container>
+                <div class="flex flex-col gap-6">
+                    <div class="card">
+                        <div class="p-6">
+                            <h4 class="card-title mb-4">Edit a product </h4>
 
-                      <ng-container matColumnDef="brand">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Brand </th>
-                        <td mat-cell *matCellDef="let product"> {{product.brand}} </td>
-                      </ng-container>
-                  
-                      <!-- Action Column -->
-                     <!-- Action Column -->
-<ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-    <td mat-cell *matCellDef="let row">
-      <button mat-icon-button color="primary" (click)="Edit(row.id)" >
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button mat-icon-button color="warn" (click)="openConfirmationDialog(row.id)">
-        <mat-icon>delete</mat-icon>
-      </button>
-      
-    </td>
-  </ng-container>
+                            <form (ngSubmit)="updateProduct()" #form="ngForm">
+                                <div class="grid lg:grid-cols-2 gap-6">
+
+                                <div class="wrapper">
+                                    <label for="simpleinput" class="text-gray-800 text-sm font-medium inline-block mb-2">Code Bar</label>
+                                    <input
+                                    type="text"
+                                    name="barcode"
+                                    id="simpleinput"
+                                    [(ngModel)]="prod.barcode"
+                                    class="form-input"
+                                    placeholder="barcode"
+                                    [value]="modalResult ? modalResult : prod.barcode"
+                                  />                                  
+                                                                      
+                                    <button  title="scanner"  (click)="openModal()"> <i class="fa fa-camera"></i></button>
+
+                                </div>
+
+                                <div>
+                                    <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Image</label>
+                                    <input type="file" id="example-email" accept="image/*" (change)="onFileSelected($event)" name="image" class="form-input">
+                                    <img [src]="imgUrl ? imgUrl : (prod && prod.imageUrl)" height="100" width="100" *ngIf="imgUrl || (prod && prod.imageUrl)">
+                                  </div>
+                                  
+
+                                <div>
+                                    <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Libelle </label>
+                                    <input type="text" id="example-email" [(ngModel)]="prod.libelle" name="libelle" class="form-input" value="{{prod.libelle}}" placeholder="Libelle">
+                                </div>
+
+                                <div>
+                                    <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
+                                    <input type="text" id="example-password" [(ngModel)]="prod.reasons" class="form-input" name="reasons" value="{{prod.reasons}}" placeholder="description">
+                                </div>
+
+                               
+                                
+
+            
+
+                                <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Alternatives</label>
+                                   <!-- Use *ngIf to ensure prod is not null or undefined -->
+<select class="form-select" name="alternative" [(ngModel)]="prod.alternative" *ngIf="prod">
+    <!-- <option desable>{{prod.alternative}}</option> -->
+    <option *ngFor="let alt of alts" [value]="alt.id" [selected]="alt.id === prod.brand">{{ alt.replacementName }}</option>
+  </select>
   
-                  
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                  
-                      <!-- Row shown when there is no matching data. -->
-                      <tr class="mat-row" *matNoDataRow>
-                        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
-                          No data matching the filter "{{input.value}}"
-                        </td>
-                      </tr>
-                    </table>
-                  
-                  </div>
-                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-
+                                  </div>
+                              
+                                  <div>
+                                    <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Brands</label>
+                                    <select class="form-select" name="brand" [(ngModel)]="prod.brand">
+                                        <!-- <option desable>{{prod.brand}}</option> -->
+                                        <option *ngFor="let brand of brands" [value]="brand.id" [selected]="brand.id === prod.brand">{{ brand.brandName }}</option>
+                                      </select>
+                                      
+                                      
+                                  </div>
+                              
+                                  <br>
+                                  <div>
+                                    <button class="class-form btn-primary" id="example-number" type="submit">Save</button>
+                                  </div>
+                                </div>
+                              </form>
+                        </div>
+                    </div> 
                 
                 <!-- end row -->
 
@@ -375,4 +394,5 @@
               
 
 
-              
+
+            
