@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -6,13 +5,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TabService {
+export class ProdService {
 
-  constructor(private http: HttpClient) { }
 
-  getAllProducts1() {
-    return this.http.get('https://fakestoreapi.com/products');
+  private apiUrl = 'http://localhost:3000/produits'; // Replace with your backend API URL
+
+  constructor(private http: HttpClient) {}
+
+  uploadFile(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/`, formData);
   }
+
+
   getAllProducts() {
     return this.http.get('http://localhost:8080/api/product-boycotts'); // Add the protocol part (http://)
   }
@@ -21,11 +25,9 @@ export class TabService {
   private backendUrl = 'http://localhost:8080/api/product-boycotts'; // Replace with your actual backend URL
 
 
- 
-
-  deleteProduct(id: string): Observable<void> {
-    const url = `${this.backendUrl}/${id}`;
-    return this.http.delete<void>(url);
+  createProduct(formData: any): Observable<any> {
+    return this.http.post<any>(`${this.backendUrl}`, formData);
   }
 
 }
+ 

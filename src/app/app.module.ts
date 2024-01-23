@@ -19,7 +19,6 @@ import { ModalComponent } from './sharing/modal/modal.component';
   declarations: [
     AppComponent,
     Dash2Component,
-    ProdTabComponent,
 
   ],
   imports: [

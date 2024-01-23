@@ -4,6 +4,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { TabService } from 'src/app/tab/tab.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 
 @Component({
   selector: 'app-prod-tab',
@@ -15,12 +17,37 @@ export class ProdTabComponent {
   prod: any;
   filterText: string = '';
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['title', 'description'];
+  displayedColumns: string[] = ['imageUrl','libelle', 'brand', 'action'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private prodService: TabService, private httpClient: HttpClient) {}
+  constructor(private prodService: TabService, private httpClient: HttpClient,public dialog: MatDialog) {}
+
+  openConfirmationDialog(id: string): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: { message: 'Are you sure you want to delete this item?' }
+    });
+  
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.onDelete(id);
+      }
+    });
+  }
+
+  onDelete(id: string): void {
+    // Call your service to delete the item by ID
+    this.prodService.deleteProduct(id).subscribe(
+      () => {
+        console.log('Product deleted successfully');
+        this.getProducts()
+      },
+      (error) => {
+        console.error('Error deleting product', error);
+      }
+    );
+  }
 
   ngOnInit() {
     this.getProducts();

@@ -14,6 +14,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { ProdTabComponent } from 'src/app/Adm/adm-dash/prod-tab/prod-tab.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 
 
 
@@ -21,7 +24,9 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
   declarations: [
     TabComponent,
     NavComponent,
-    ModalComponent
+    ModalComponent,
+    ProdTabComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -39,6 +44,12 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatIconModule,
+    
+    
+  ],
+  exports:[
+    ConfirmationDialogComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 

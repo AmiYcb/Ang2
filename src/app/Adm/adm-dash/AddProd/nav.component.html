@@ -288,7 +288,7 @@
                         <div class="p-6">
                             <h4 class="card-title mb-4">Add a product</h4>
 
-                            <form (submit)="onSubmit()" #myForm="ngForm">
+                            <form (ngSubmit)="onSubmit()" #form="ngForm">
                                 <div class="grid lg:grid-cols-2 gap-6">
 
                                 <div class="wrapper">
@@ -301,8 +301,9 @@
 
                                 <div>
                                     <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Image</label>
-                                    <input type="file" id="example-email" [(ngModel)]="image"  (change)="onFileSelected($event)" accept="image/*" name="image" class="form-input">
-                                  </div>
+                                    <input type="file" id="example-email" accept="image/*" (change)="onFileSelected($event)" accept="image/*" name="image" class="form-input">
+                                  <img [src]="imgUrl" height="100" *ngIf="imgUrl">
+                                </div>
                                   
 
                                 <div>
