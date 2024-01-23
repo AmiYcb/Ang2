@@ -6,6 +6,7 @@ import { BarcodeFormat } from '@zxing/library';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
 import { ProdService } from '../AddProd/prod.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editprod',
@@ -91,15 +92,29 @@ this.getAlts();
   }
   
   updateProduct(): void {
-    // Handle file upload if needed
     // Call the service method to update the product
     this.prodService.updateProduct(this.productId, this.prod).subscribe({
       next: () => {
-        console.log('Product updated successfully:', this.prod);
-        // Optionally, you can reload the data or update the dataSource here
+        // Display success message using SweetAlert
+        Swal.fire({
+          icon: 'success',
+          title: 'Product updated successfully!',
+          showConfirmButton: false,
+          timer: 1500 // Automatically close after 1.5 seconds
+        });
+  
+        // Navigate to the home page
+        this.router.navigate(['/Liste des produits']);
       },
       error: (error) => {
         console.error('Error updating product:', error);
+  
+        // Display error message using SweetAlert
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Failed to update product. Please try again.',
+        });
       }
     });
   }

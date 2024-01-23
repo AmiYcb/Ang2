@@ -6,6 +6,7 @@ import { BarcodeFormat } from '@zxing/library';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
 import { ProdService } from './prod.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 // import { ProductSService } from '../product-s.service';
 
 
@@ -39,16 +40,36 @@ export class NavComponent implements OnInit {
       alternative: this.alternative,
       brand: this.brand
     };
-
+  
     // Call your service to post the data to the backend
-    this.prodService.createProduct(formData).subscribe(response => {
-      console.log('Product created successfully:', response);
-    }, error => {
-      console.error('Error creating product:', error);
-    });
+    this.prodService.createProduct(formData).subscribe(
+      response => {
+        console.log('Product created successfully:', response);
+  
+        // Display success message using SweetAlert
+        Swal.fire({
+          icon: 'success',
+          title: 'Product created successfully!',
+          showConfirmButton: false,
+          timer: 1500 // Automatically close after 1.5 seconds
+        });
+  
+        // Navigate to the home page
+        this.router.navigate(['/Liste des produits']);
+      },
+      error => {
+        console.error('Error creating product:', error);
+  
+        // Display error message using SweetAlert
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Failed to create product. Please try again.',
+        });
+      }
+    );
   }
-
-
+  
   brands: any[] = []; // Change the type according to your actual brand structure
   bran?: any;
   getBrands() {

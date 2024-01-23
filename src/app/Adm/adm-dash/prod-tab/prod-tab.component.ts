@@ -7,6 +7,7 @@ import { TabService } from 'src/app/tab/tab.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 import { Route, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-prod-tab',
@@ -43,16 +44,47 @@ export class ProdTabComponent {
   }
 
   onDelete(id: string): void {
-    // Call your service to delete the item by ID
-    this.prodService.deleteProduct(id).subscribe(
-      () => {
-        console.log('Product deleted successfully');
-        this.getProducts()
-      },
-      (error) => {
-        console.error('Error deleting product', error);
+    // Use SweetAlert to confirm the deletion
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this product!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // User clicked "Yes," proceed with deletion
+        this.prodService.deleteProduct(id).subscribe(
+          () => {
+            console.log('Product deleted successfully');
+  
+            // Display success message using SweetAlert
+            Swal.fire({
+              icon: 'success',
+              title: 'Product deleted successfully!',
+              showConfirmButton: false,
+              timer: 1500 // Automatically close after 1.5 seconds
+            });
+  
+            // Optionally, you can reload the data or update the dataSource here
+            this.getProducts();
+          },
+          (error) => {
+            console.error('Error deleting product', error);
+  
+            // Display error message using SweetAlert
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Failed to delete product. Please try again.',
+            });
+          }
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // User clicked "No," do nothing
       }
-    );
+    });
   }
 
   ngOnInit() {
