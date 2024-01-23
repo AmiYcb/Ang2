@@ -13,8 +13,8 @@ const routes: Routes = [
   {path:"tab", component:TabComponent },
 
   {path:"", component:Dash2Component },
-  {path:"Liste des produits", component:ProdTabComponent },
-  {path:"aj", component:NavComponent },
+  {path:"ProductList", component:ProdTabComponent },
+  {path:"prod", component:NavComponent },
   { path: 'edit/:id', component: EditprodComponent },
 
 

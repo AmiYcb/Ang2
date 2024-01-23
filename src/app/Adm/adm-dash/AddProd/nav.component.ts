@@ -55,7 +55,7 @@ export class NavComponent implements OnInit {
         });
   
         // Navigate to the home page
-        this.router.navigate(['/Liste des produits']);
+        this.router.navigate(['/ProductList']);
       },
       error => {
         console.error('Error creating product:', error);

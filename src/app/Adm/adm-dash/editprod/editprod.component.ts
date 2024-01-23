@@ -104,7 +104,7 @@ this.getAlts();
         });
   
         // Navigate to the home page
-        this.router.navigate(['/Liste des produits']);
+        this.router.navigate(['/ProductList']);
       },
       error: (error) => {
         console.error('Error updating product:', error);
