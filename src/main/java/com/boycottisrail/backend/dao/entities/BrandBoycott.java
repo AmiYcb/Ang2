@@ -11,6 +11,7 @@ public class BrandBoycott {
     @Id
     private String id;
     private String brandName;
+    private String imageUrl;
     private String boycottReasons;
     private String brandDescription;
 }

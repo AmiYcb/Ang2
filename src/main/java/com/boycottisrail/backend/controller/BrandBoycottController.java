@@ -44,6 +44,7 @@ public class BrandBoycottController {
         return brandBoycottService.findById(id)
                 .map(existingBoycott -> {
                     existingBoycott.setBrandName(updatedBrandBoycott.getBrandName());
+                    existingBoycott.setImageUrl(updatedBrandBoycott.getImageUrl());
                     existingBoycott.setBoycottReasons(updatedBrandBoycott.getBoycottReasons());
                     existingBoycott.setBrandDescription(updatedBrandBoycott.getBrandDescription());
                     return ResponseEntity.ok(brandBoycottService.save(existingBoycott));

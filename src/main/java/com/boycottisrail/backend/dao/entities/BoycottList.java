@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class BoycottList {
     private List<String> boycottedBrands;
+
     private List<String> boycottedProducts;
 
     
