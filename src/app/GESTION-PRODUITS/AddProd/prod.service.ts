@@ -6,14 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProdService {
+
+
+  constructor(private http: HttpClient) {}
+
+
+  
   putProduct(productId: string | null, prod: any) {
     throw new Error('Method not implemented.');
   }
 
-
+ 
   private apiUrl = 'http://localhost:3000/produits'; // Replace with your backend API URL
 
-  constructor(private http: HttpClient) {}
 
   uploadFile(formData: FormData): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/`, formData);

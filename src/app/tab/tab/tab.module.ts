@@ -52,7 +52,6 @@ import { Dash2Component } from 'src/app/Adm/adm-dash/dash2/dash2.component';
     FormsModule,
     ZXingScannerModule,
     MatFormFieldModule,
-    MatInputModule,
     MatSelectModule,
     MatDialogModule,
     ReactiveFormsModule,

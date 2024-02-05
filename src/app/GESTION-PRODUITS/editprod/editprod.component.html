@@ -68,18 +68,19 @@
                                                 <input required type="text" id="example-email" [(ngModel)]="prod.libelle" name="libelle" class="form-input" value="{{prod.libelle}}" placeholder="Libelle">
                                             </div>
 
-                                            <div>
-                                                <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
-                                                <input required type="text" id="example-password" [(ngModel)]="prod.reasons" class="form-input" name="reasons" value="{{prod.reasons}}" placeholder="description">
-                                            </div>
+                                            
 
                                             <div>
-                                                <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Alternatives</label>
+                                                <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Status</label>
                                                 <!-- Use *ngIf to ensure prod is not null or undefined -->
                                                 <select class="form-select" name="alternative" required [(ngModel)]="prod.alternative" *ngIf="prod">
-                                                    <option desable>{{prod.alternative}}</option>
-                                                    <option *ngFor="let alt of alts" [value]="alt.id" [selected]="alt.id === prod.brand">{{ alt.replacementName }}</option>
+                                                    <option disabled>{{ prod.alternative }}</option>
+                                                    <ng-container *ngIf="prod.alternative === 'Boycott'">
+                                                        <option value="Alternative">Alternative</option>
+                                                    </ng-container>
+                                                    <option value="Boycott">Boycott</option>
                                                 </select>
+                                                
 
                                             </div>
 
@@ -89,8 +90,11 @@
                                                     <!-- <option desable>{{prod.brandName}}</option> -->
                                                     <option *ngFor="let brand of brands" [value]="brand.id" [selected]="brand.id === prod.brand">{{ brand.brandName }}</option>
                                                 </select>
+                                            </div>
 
-
+                                            <div>
+                                                <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
+                                                <textarea required type="text" id="example-password" [(ngModel)]="prod.reasons" class="form-input" name="reasons" value="{{prod.reasons}}" placeholder="description"></textarea>
                                             </div>
 
                                             <br>

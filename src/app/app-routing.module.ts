@@ -10,6 +10,9 @@ import { AboutUsComponent } from './Scan/about-us/about-us.component';
 import { ContactUsComponent } from './Scan/contact-us/contact-us.component';
 import { BrandsComponent } from './Scan/brands/brands.component';
 import { LoginComponent } from './Scan/login/login.component';
+import { AddbrandComponent } from './GESTION-BRANDS/addbrand/addbrand.component';
+import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component';
+import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
 
 
 const routes: Routes = [
@@ -28,6 +31,12 @@ const routes: Routes = [
   { path: 'edit/:id', component: EditprodComponent },
 
 
+  {path:"addBrand", component:AddbrandComponent },
+  {path:"BrandsList", component:BrandtabComponent },
+  {path:"editBrand/:id", component:EdittabComponent },
+
+ 
+  
 
   // {path: '404', component: PageNotFoundComponent},
 ];

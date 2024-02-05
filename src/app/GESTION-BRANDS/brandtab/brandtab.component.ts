@@ -1,35 +1,53 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { TabService } from 'src/app/tab/tab.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
-import { Route, Router } from '@angular/router';
+import { BrandService } from '../brand.service';
 import Swal from 'sweetalert2';
+import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-prod-tab',
-  templateUrl: './prod-tab.component.html',
-  styleUrls: ['./prod-tab.component.css']
+  selector: 'app-brandtab',
+  templateUrl: './brandtab.component.html',
+  styleUrls: ['./brandtab.component.css']
 })
-export class ProdTabComponent {
+export class BrandtabComponent implements AfterViewInit {
 
-  prod: any;
-  filterText: string = '';
+  brand: any;
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['imageUrl','libelle', 'brand','alternative', 'action'];
+  displayedColumns: string[] = ['imageUrl', 'brandName','boycottReasons', 'action'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private router:Router,private prodService: TabService, private httpClient: HttpClient,public dialog: MatDialog) {}
+  constructor(private router:Router,private brandService: BrandService, public dialog: MatDialog) {}
 
-  Edit(productId: string): void {
-    // Navigate to the edit route with the specific ID
-    this.router.navigate(['edit', productId]);
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.getBrands();
   }
+
+  getBrands() {
+    this.brandService.getAllBrands().subscribe((datas: any) => {
+      console.log(datas); // Log the data to the console
+      this.brand = datas;
+      this.dataSource.data = datas;
+    });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+
 
   openConfirmationDialog(id: string): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -55,7 +73,7 @@ export class ProdTabComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         // User clicked "Yes," proceed with deletion
-        this.prodService.deleteProduct(id).subscribe(
+        this.brandService.deleteBrand(id).subscribe(
           () => {
             console.log('Product deleted successfully');
   
@@ -68,7 +86,7 @@ export class ProdTabComponent {
             });
   
             // Optionally, you can reload the data or update the dataSource here
-            this.getProducts();
+            this.getBrands();
           },
           (error) => {
             console.error('Error deleting product', error);
@@ -87,26 +105,11 @@ export class ProdTabComponent {
     });
   }
 
-  ngOnInit() {
-    this.getProducts();
+
+
+  Edit(productId: string): void {
+    // Navigate to the edit route with the specific ID
+    this.router.navigate(['editBrand', productId]);
   }
 
-  getProducts() {
-    this.prodService.getAllProducts().subscribe((datas: any) => {
-      console.log(datas); // Log the data to the console
-      this.prod = datas;
-      this.dataSource.data = datas;
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    });
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 }

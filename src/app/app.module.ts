@@ -17,11 +17,16 @@ import { EditprodComponent } from './GESTION-PRODUITS/editprod/editprod.componen
 import { ProductBarModule } from './Scan/product-bar/product-bar.module';
 import { NavbarComponent } from './sharing/navbar/navbar.component';
 import { SidebarComponent } from './sharing/sidebar/sidebar.component';
+import { AddbrandComponent } from './GESTION-BRANDS/addbrand/addbrand.component';
+import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component';
+import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
+import { BrandmodelModule } from './GESTION-BRANDS/brandmodel/brandmodel.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+   
     
   ],
   imports: [
@@ -34,7 +39,7 @@ import { SidebarComponent } from './sharing/sidebar/sidebar.component';
     MatInputModule,
     MatPaginatorModule,
     ZXingScannerModule,
-  
+    BrandmodelModule,
     ProductBarModule
   ],
   exports:[
