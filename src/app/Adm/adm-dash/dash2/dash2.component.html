@@ -1,0 +1,102 @@
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <style>
+        /* Override Bootstrap default padding */
+        .no-gutters {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <app-navbar2 class="full-width-navbar"></app-navbar2>
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            <div class="col-md-3 p-0" style="position: relative; right: 2%;">
+                <app-sidebar></app-sidebar>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9" style="position: relative; right: 5%;">
+                <div class="app-content">
+                    <main class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="text-slate-900 text-lg font-medium">Dashboard</h4>
+                            <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                                <a href="#" class="text-sm font-medium text-slate-700">Lunoz</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700">Menu</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Dashboard</a>
+                            </div>
+                        </div>
+
+                        <!-- Card Section Start -->
+                        <section class="grid grid-cols-2 gap-4 card-container">
+                            <!-- Card 1 -->
+                            <div class="card">
+                                <div class="p-5">
+                                    <i class="bx bx-basket float-right text-3xl text-muted"></i>
+                                    <h6 class="text-muted text-sm uppercase">Product</h6>
+                                    <h3 class="text-2xl mb-3" data-plugin="counterup">1,890</h3>
+                                    <span class="inline-flex items-center gap-1.5 py-0.5 px-1.5 text-xs font-medium bg-success text-white rounded me-1">+89%</span>
+                                    <span class="text-muted">Last year</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="card">
+                                <div class="p-5">
+                                    <i class="bx bx-basket float-right text-3xl text-muted"></i>
+                                    <h6 class="text-muted text-sm uppercase">Brands</h6>
+                                    <h3 class="text-2xl mb-3" data-plugin="counterup">1,890</h3>
+                                    <span class="inline-flex items-center gap-1.5 py-0.5 px-1.5 text-xs font-medium bg-success text-white rounded me-1">+89%</span>
+                                    <span class="text-muted">Last year</span>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Card 2 -->
+                            <div class="card">
+                                <div class="p-5">
+                                    <i class="bx bx-basket float-right text-3xl text-muted"></i>
+                                    <h6 class="text-muted text-sm uppercase">Brands</h6>
+                                    <h3 class="text-2xl mb-3" data-plugin="counterup">1,890</h3>
+                                    <span class="inline-flex items-center gap-1.5 py-0.5 px-1.5 text-xs font-medium bg-success text-white rounded me-1">+89%</span>
+                                    <span class="text-muted">Last year</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="card">
+                                <div class="p-5">
+                                    <i class="bx bx-basket float-right text-3xl text-muted"></i>
+                                    <h6 class="text-muted text-sm uppercase">Alias</h6>
+                                    <h3 class="text-2xl mb-3" data-plugin="counterup">1,890</h3>
+                                    <span class="inline-flex items-center gap-1.5 py-0.5 px-1.5 text-xs font-medium bg-success text-white rounded me-1">+89%</span>
+                                    <span class="text-muted">Last year</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- end row -->
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+ 

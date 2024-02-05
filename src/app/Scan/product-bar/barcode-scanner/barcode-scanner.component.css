@@ -1,0 +1,18 @@
+/* barcode-scanner.component.css */
+.scanner-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.scanner {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+}
+
+.scanned-data {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
