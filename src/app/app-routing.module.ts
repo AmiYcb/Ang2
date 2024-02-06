@@ -13,6 +13,7 @@ import { LoginComponent } from './Scan/login/login.component';
 import { AddbrandComponent } from './GESTION-BRANDS/addbrand/addbrand.component';
 import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component';
 import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
+import { FirstpageComponent } from './USER/firstpage/firstpage.component';
 
 
 const routes: Routes = [
@@ -35,8 +36,9 @@ const routes: Routes = [
   {path:"BrandsList", component:BrandtabComponent },
   {path:"editBrand/:id", component:EdittabComponent },
 
- 
   
+  //user
+  {path:"User", component:FirstpageComponent },
 
   // {path: '404', component: PageNotFoundComponent},
 ];

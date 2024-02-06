@@ -21,13 +21,21 @@ import { AddbrandComponent } from './GESTION-BRANDS/addbrand/addbrand.component'
 import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component';
 import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
 import { BrandmodelModule } from './GESTION-BRANDS/brandmodel/brandmodel.module';
+import { AddsuggComponent } from './GESTION-SUGGESTION/addsugg/addsugg.component';
+import { EditsuggComponent } from './GESTION-SUGGESTION/editsugg/editsugg.component';
+import { SuggtabComponent } from './GESTION-SUGGESTION/suggtab/suggtab.component';
+import { FirstpageComponent } from './USER/firstpage/firstpage.component';
+import { NavComponent } from './USER/nav/nav.component';
+import { UserModule } from './USER/user/user.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-   
-    
+    AddsuggComponent,
+    EditsuggComponent,
+    SuggtabComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,8 @@ import { BrandmodelModule } from './GESTION-BRANDS/brandmodel/brandmodel.module'
     MatPaginatorModule,
     ZXingScannerModule,
     BrandmodelModule,
-    ProductBarModule
+    ProductBarModule,
+    UserModule
   ],
   exports:[
   
