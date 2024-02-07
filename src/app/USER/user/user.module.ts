@@ -10,11 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TabModule } from 'src/app/tab/tab/tab.module';
+import { SuggtabComponent } from 'src/app/GESTION-SUGGESTION/suggtab/suggtab.component';
 @NgModule({
   declarations: [
     FirstpageComponent,
     NavComponent,
-    AddcompoComponent
+    AddcompoComponent,
+    SuggtabComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    TabModule
     
   ],
   exports:[

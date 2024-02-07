@@ -23,7 +23,6 @@ import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
 import { BrandmodelModule } from './GESTION-BRANDS/brandmodel/brandmodel.module';
 import { AddsuggComponent } from './GESTION-SUGGESTION/addsugg/addsugg.component';
 import { EditsuggComponent } from './GESTION-SUGGESTION/editsugg/editsugg.component';
-import { SuggtabComponent } from './GESTION-SUGGESTION/suggtab/suggtab.component';
 import { FirstpageComponent } from './USER/firstpage/firstpage.component';
 import { NavComponent } from './USER/nav/nav.component';
 import { UserModule } from './USER/user/user.module';
@@ -34,7 +33,6 @@ import { UserModule } from './USER/user/user.module';
     AppComponent,
     AddsuggComponent,
     EditsuggComponent,
-    SuggtabComponent,
   
   ],
   imports: [

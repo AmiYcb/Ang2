@@ -1,1 +1,120 @@
-<p>suggtab works!</p>
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <style>
+        /* Override Bootstrap default padding */
+        .no-gutters {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <app-navbar2 class="full-width-navbar"></app-navbar2>
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            <div class="col-md-3 p-0" style="position: relative; right: 2%;">
+                <app-sidebar></app-sidebar>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9" style="position: relative; right: 5%;">
+                <div class="app-content">
+                    <main class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="text-slate-900 text-lg font-medium">Dashboard</h4>
+                            <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                                <a href="#" class="text-sm font-medium text-slate-700">Lunoz</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700">Menu</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Dashboard</a>
+                            </div>
+                        </div>
+
+                        <!-- Card Section Start -->
+                      
+                        
+
+                        <div class="md:flex hidden items-center relative" style="margin-top: -10px; position: relative; ">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            </div>
+                           
+                        
+                            <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3"></button>
+                        </div>
+
+                        <div class="col-md-8 mb-3">
+                            <div class="card-body " style="width: 45rem; background-color: rgb(253, 252, 252); position: relative;" >
+                               
+                                <!-- Container for Emails List -->
+                                <div class="container" >
+                                  
+                                  <h3 class="card-title">Suggestions List  
+                                    <!-- <button style="position: relative; left: 82%;" (click)="openModal()">  new <i class="fa-solid fa-envelope"></i> </button>  -->
+                                  <mat-dialog-actions style="position: relative; left: 17px;">
+                                    <button mat-raised-button color="primary" (click)="openDialog()">
+                                      Add
+                                    </button>
+                                  </mat-dialog-actions>
+                                  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="search" class="form-input px-4 rounded-full bg-gray-500/10 border-transparent focus:border-transparent text-sm" placeholder="Search..." style="width: 200px; margin-left: auto;">
+                                  </h3>
+                  
+                                    <ul class="list-group" >
+                                        <!-- Loop through emails and display list items -->
+                                        <li class="list-group-item" *ngFor="let email of getCurrentPageEmails()">
+                                          <div class="card">
+                                            <div class="card-body d-flex justify-content-between align-items-center">
+                                              <div>
+                                                <h6 class="card-title">{{ email.brandName }}</h6>
+                                                <p class="card-text">{{ email.description }}</p>
+                                                <!-- Add more content here as needed -->
+                                              </div>
+                                              <button class="btn btn-danger" (click)="onDelete(email.id)"><i class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                          </div>
+                                          
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="position: relative; left: 77%; font-weight: bold; ">
+                              <button (click)="prevPage()" [disabled]="currentPage === 0">Previous</button>
+                              <span>{{ currentPage + 1 }} / {{ totalPages }}</span>
+                              <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+                            </div>
+                        </div>
+                  
+                      
+                     
+                    
+
+
+
+
+
+
+
+
+
+                        <!-- end row -->
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+ 
