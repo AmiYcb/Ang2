@@ -26,6 +26,8 @@ import { EditsuggComponent } from './GESTION-SUGGESTION/editsugg/editsugg.compon
 import { FirstpageComponent } from './USER/firstpage/firstpage.component';
 import { NavComponent } from './USER/nav/nav.component';
 import { UserModule } from './USER/user/user.module';
+import { ViewProdComponent } from './GESTION-PRODUITS/view-prod/view-prod.component';
+import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { UserModule } from './USER/user/user.module';
     AppComponent,
     AddsuggComponent,
     EditsuggComponent,
+    PageNotFoundComponentComponent,
   
   ],
   imports: [

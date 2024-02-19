@@ -31,6 +31,11 @@ export class ProdTabComponent {
     this.router.navigate(['edit', productId]);
   }
 
+  View(productId: string): void {
+    // Navigate to the edit route with the specific ID
+    this.router.navigate(['view', productId]);
+  }
+
   openConfirmationDialog(id: string): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: { message: 'Are you sure you want to delete this item?' }

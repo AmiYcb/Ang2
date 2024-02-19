@@ -11,6 +11,7 @@ import { ServicessService } from '../servicess.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from '../login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ZXingScannerModule,
     CommonModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
    
   ],
  

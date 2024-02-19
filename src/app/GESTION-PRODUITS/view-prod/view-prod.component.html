@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Override Bootstrap default padding */
+        .no-gutters {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        /* Style for the grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: auto 1fr; /* First column takes auto width, second column takes remaining space */
+            gap: 20px; /* Gap between grid items */
+        }
+
+        /* Style for the image */
+        .product-image {
+            max-width: 300px; /* Set maximum width for the image */
+            height: 100px; /* Allow the height to adjust based on the width */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <app-navbar2 class="full-width-navbar"></app-navbar2>
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            <div class="col-md-3 p-0" style="position: relative; right: 2%;">
+                <app-sidebar></app-sidebar>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9" style="position: relative; right: 5%;">
+                <div class="app-content">
+                    <main class="p-6">
+
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="text-slate-900 text-lg font-medium">Edit Product</h4>
+                            <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                                <a href="#" class="text-sm font-medium text-slate-700">Lunoz</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700">Menu</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Dashboard</a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <div class="card">
+                                <div class="p-6">
+                                    <div class="grid">
+                                        <!-- Image Column -->
+                                        <div>
+                                            <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Image</label>
+                                            <img class="product-image" [src]="prod.imageUrl">
+                                        </div>
+
+                                        <!-- Details Column -->
+                                        <div>
+                                            <div>
+                                                <label for="simpleinput" class="text-gray-800 text-sm font-medium inline-block mb-2">Code Bar</label>
+                                                {{ prod.barcode }}
+                                            </div>
+
+                                            <div>
+                                                <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Libelle</label>
+                                                {{ prod.libelle }}
+                                            </div>
+
+                                            <div>
+                                                <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Status</label>
+                                                {{ prod.alternative }}
+                                            </div>
+
+                                            <div>
+                                                <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Brands</label>
+                                                {{ prod.brand }}
+                                            </div>
+
+                                            <div>
+                                                <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
+                                                {{ prod.reasons }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

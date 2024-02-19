@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicessService } from '../servicess.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { BrandService } from 'src/app/GESTION-BRANDS/brand.service';
 
 @Component({
   selector: 'app-brands',
@@ -25,19 +26,19 @@ export class BrandsComponent implements OnInit {
   currentPage = 0;
   scrollState = 'start';
 
-  constructor(private service: ServicessService) {}
+  constructor(private service: ServicessService,private brandService: BrandService,) {}
 
   ngOnInit() {
     this.getProducts();
   }
 
   getProducts() {
-    this.service.getAllProducts().subscribe(
+    this.brandService.getAllBrands().subscribe(
       (res: any) => {
         this.products = res;
         this.updatePaginatedProducts();
       },
-      (error) => {
+      (error: any) => {
         console.error(error);
       }
     );

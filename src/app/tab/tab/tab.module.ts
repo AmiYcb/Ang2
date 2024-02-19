@@ -21,6 +21,7 @@ import { EditprodComponent } from 'src/app/GESTION-PRODUITS/editprod/editprod.co
 import { SidebarComponent } from 'src/app/sharing/sidebar/sidebar.component';
 import { NavbarComponent } from 'src/app/sharing/navbar/navbar.component';
 import { Dash2Component } from 'src/app/Adm/adm-dash/dash2/dash2.component';
+import { ViewProdComponent } from 'src/app/GESTION-PRODUITS/view-prod/view-prod.component';
 
 
 
@@ -32,6 +33,7 @@ import { Dash2Component } from 'src/app/Adm/adm-dash/dash2/dash2.component';
     ProdTabComponent,
     ConfirmationDialogComponent,
     EditprodComponent,
+    ViewProdComponent,
     Dash2Component,
     //sharing
     NavbarComponent,

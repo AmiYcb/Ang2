@@ -42,7 +42,7 @@
                                 <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
                                 <a href="#" class="text-sm font-medium text-slate-700">Dashboard</a>
                                 <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
-                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Products</a>
+                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Brands</a>
                             </div>
                         </div>
                           
@@ -69,7 +69,7 @@
 <div class="container">
     <mat-table [dataSource]="dataSource" matSort>
   
-      <!-- Image Column -->
+      <!-- Image Column --> 
       <ng-container matColumnDef="imageUrl">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Image </mat-header-cell>
         <mat-cell *matCellDef="let row"> <img [src]="row.imageUrl" style="width: 100px; height: 100px;"> </mat-cell>

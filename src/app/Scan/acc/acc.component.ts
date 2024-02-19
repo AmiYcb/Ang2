@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ProdService } from 'src/app/GESTION-PRODUITS/AddProd/prod.service';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-acc',
@@ -28,5 +29,24 @@ export class AccComponent {
       this.modalResult = result;
     });
   }
+
+  searchQuery: string = ''; 
+
+  // lewed() {
+  //   console.log('Search query:', this.searchQuery); // Print the search query to the console
+  // }
+
+  productBarcode: string = '';
+
+  lewed() {
+    console.log('Search query:', this.searchQuery); // Print the search query to the console
+  
+    if (this.searchQuery === this.productBarcode) {
+      Swal.fire('Danger', 'this product is boycoted ', 'success'); // Display a success alert with '0' if the search query matches the product barcode
+    } else {
+      Swal.fire('We dont know try another ', 'error'); // Display an error alert with '-1' if the search query does not match the product barcode
+    }
+  }
+  
 
 }

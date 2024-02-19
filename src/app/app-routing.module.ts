@@ -15,6 +15,8 @@ import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component'
 import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
 import { FirstpageComponent } from './USER/firstpage/firstpage.component';
 import { SuggtabComponent } from './GESTION-SUGGESTION/suggtab/suggtab.component';
+import { ViewProdComponent } from './GESTION-PRODUITS/view-prod/view-prod.component';
+import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path:"ProductList", component:ProdTabComponent },
   {path:"prod", component:NavComponent },
   { path: 'edit/:id', component: EditprodComponent },
+  {path:"view/:id", component:ViewProdComponent },
 
 
   {path:"addBrand", component:AddbrandComponent },
@@ -39,9 +42,13 @@ const routes: Routes = [
 
   {path:"sugg", component:SuggtabComponent },
 
-    
+  
   //user
   {path:"User", component:FirstpageComponent },
+  
+  { path: '**', component: PageNotFoundComponentComponent }
+  // { path: '**', component: PageNotFoundComponent } // Wildcard route
+
 
   // {path: '404', component: PageNotFoundComponent},
 ];
