@@ -5,7 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { TabService } from 'src/app/tab/tab.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 import { Route, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -37,17 +36,20 @@ export class ProdTabComponent {
   }
 
   openConfirmationDialog(id: string): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data: { message: 'Are you sure you want to delete this item?' }
-    });
-  
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Are you sure you want to delete this item?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
         this.onDelete(id);
       }
     });
   }
-
   onDelete(id: string): void {
     // Use SweetAlert to confirm the deletion
     Swal.fire({

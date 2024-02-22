@@ -16,7 +16,6 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { ProdTabComponent } from 'src/app/GESTION-PRODUITS/prod-tab/prod-tab.component';
 import { MatIconModule } from '@angular/material/icon';
-import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 import { EditprodComponent } from 'src/app/GESTION-PRODUITS/editprod/editprod.component';
 import { SidebarComponent } from 'src/app/sharing/sidebar/sidebar.component';
 import { NavbarComponent } from 'src/app/sharing/navbar/navbar.component';
@@ -31,7 +30,6 @@ import { ViewProdComponent } from 'src/app/GESTION-PRODUITS/view-prod/view-prod.
     NavComponent,
     ModalComponent,
     ProdTabComponent,
-    ConfirmationDialogComponent,
     EditprodComponent,
     ViewProdComponent,
     Dash2Component,
@@ -63,7 +61,6 @@ import { ViewProdComponent } from 'src/app/GESTION-PRODUITS/view-prod/view-prod.
     
   ],
   exports:[
-    ConfirmationDialogComponent,
     NavbarComponent,
     SidebarComponent,
   ],

@@ -5,7 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BrandService } from '../brand.service';
 import Swal from 'sweetalert2';
-import { ConfirmationDialogComponent } from 'src/app/sharing/confirmation-dialog-component/confirmation-dialog-component.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -50,12 +49,16 @@ export class BrandtabComponent implements AfterViewInit {
 
 
   openConfirmationDialog(id: string): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data: { message: 'Are you sure you want to delete this item?' }
-    });
-  
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Are you sure you want to delete this item?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
         this.onDelete(id);
       }
     });
