@@ -26,17 +26,17 @@ export class ProdService {
 
 
   // getAllBrands() {
-  //   return this.http.get('localhost:8080/api/brand-boycotts'); // Add the protocol part (http://)
+  //   return this.http.get('localhost:8081/api/brand-boycotts'); // Add the protocol part (http://)
   // }
   getAllAlt() {
-    return this.http.get('http://localhost:8080/api/product-replacements'); // Add the protocol part (http://)
+    return this.http.get('http://localhost:8081/api/product-replacements'); // Add the protocol part (http://)
   }
 
   getAllBrands() {
-    return this.http.get('http://localhost:8080/api/brand-boycotts'); // Add the protocol part (http://)
+    return this.http.get('http://localhost:8081/api/brand-boycotts'); // Add the protocol part (http://)
   }
 
-  private backendUrl = 'http://localhost:8080/api/product-boycotts'; // Replace with your actual backend URL
+  private backendUrl = 'http://localhost:8081/api/product-boycotts'; // Replace with your actual backend URL
 
 
   createProduct(formData: any): Observable<any> {

@@ -10,24 +10,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { TabModule } from './tab/tab/tab.module';
-import { Dash2Component } from './Adm/adm-dash/dash2/dash2.component';
-import { ProdTabComponent } from './GESTION-PRODUITS/prod-tab/prod-tab.component';
-import { ModalComponent } from './sharing/modal/modal.component';
-import { EditprodComponent } from './GESTION-PRODUITS/editprod/editprod.component';
 import { ProductBarModule } from './Scan/product-bar/product-bar.module';
-import { NavbarComponent } from './sharing/navbar/navbar.component';
-import { SidebarComponent } from './sharing/sidebar/sidebar.component';
-import { AddbrandComponent } from './GESTION-BRANDS/addbrand/addbrand.component';
-import { BrandtabComponent } from './GESTION-BRANDS/brandtab/brandtab.component';
-import { EdittabComponent } from './GESTION-BRANDS/edittab/edittab.component';
+
 import { BrandmodelModule } from './GESTION-BRANDS/brandmodel/brandmodel.module';
 import { AddsuggComponent } from './GESTION-SUGGESTION/addsugg/addsugg.component';
 import { EditsuggComponent } from './GESTION-SUGGESTION/editsugg/editsugg.component';
-import { FirstpageComponent } from './USER/firstpage/firstpage.component';
-import { NavComponent } from './USER/nav/nav.component';
 import { UserModule } from './USER/user/user.module';
-import { ViewProdComponent } from './GESTION-PRODUITS/view-prod/view-prod.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { TestComponent } from './test/test.component';
+import { ViewProdUserComponent } from './Scan/view-prod-user/view-prod-user.component';
 
 
 @NgModule({
@@ -36,6 +27,8 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
     AddsuggComponent,
     EditsuggComponent,
     PageNotFoundComponentComponent,
+    TestComponent,
+    ViewProdUserComponent,
   
   ],
   imports: [

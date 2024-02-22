@@ -9,11 +9,11 @@ import Swal from 'sweetalert2';
 export class PageNotFoundComponentComponent {
 
   constructor() {
-    Swal.fire({
-      title: 'Page Not Found',
-      text: 'The page you requested does not exist.',
-      icon: 'error'
-    });
+    // Swal.fire({
+    //   title: 'Page Not Found',
+    //   text: 'The page you requested does not exist.',
+    //   icon: 'error'
+    // });
   }
   
 }

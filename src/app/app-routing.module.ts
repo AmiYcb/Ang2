@@ -17,6 +17,9 @@ import { FirstpageComponent } from './USER/firstpage/firstpage.component';
 import { SuggtabComponent } from './GESTION-SUGGESTION/suggtab/suggtab.component';
 import { ViewProdComponent } from './GESTION-PRODUITS/view-prod/view-prod.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { UserMastBeLoggedInGuard } from './Adm/serviceslogin/user-mast-be-logged-in-guard';
+import { TestComponent } from './test/test.component';
+import { ViewProdUserComponent } from './Scan/view-prod-user/view-prod-user.component';
 
 
 const routes: Routes = [
@@ -25,27 +28,32 @@ const routes: Routes = [
   {path:"AboutUs", component:AboutUsComponent },
   {path:"Contact", component:ContactUsComponent },
   {path:"Brands", component:BrandsComponent },
-  {path:"Login", component:LoginComponent },
+  {path:"login", component:LoginComponent },
   
-  {path:"tab", component:TabComponent },
+  {path:"test1", component:TestComponent },
 
-  {path:"dash", component:Dash2Component },
-  {path:"ProductList", component:ProdTabComponent },
-  {path:"prod", component:NavComponent },
-  { path: 'edit/:id', component: EditprodComponent },
+  
+  {path:"tab", component:TabComponent  },
+
+  {path:"dash", component:Dash2Component},
+  {path:"ProductList", component:ProdTabComponent  },
+  {path:"prod", component:NavComponent  },
+  { path: 'edit/:id', component: EditprodComponent  },
   {path:"view/:id", component:ViewProdComponent },
 
 
-  {path:"addBrand", component:AddbrandComponent },
+  
+  {path:"addBrand", component:AddbrandComponent  },
   {path:"BrandsList", component:BrandtabComponent },
   {path:"editBrand/:id", component:EdittabComponent },
 
-  {path:"sugg", component:SuggtabComponent },
+  {path:"sugg", component:SuggtabComponent,canActivate:[UserMastBeLoggedInGuard]  },
+
+  {path:"prodView/:id", component:ViewProdUserComponent },
 
   
   //user
-  {path:"User", component:FirstpageComponent },
-  
+  // {path:"User", component:FirstpageComponent },
   { path: '**', component: PageNotFoundComponentComponent }
   // { path: '**', component: PageNotFoundComponent } // Wildcard route
 

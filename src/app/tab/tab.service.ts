@@ -14,11 +14,11 @@ export class TabService {
     return this.http.get('https://fakestoreapi.com/products');
   }
   getAllProducts() {
-    return this.http.get('http://localhost:8080/api/product-boycotts'); // Add the protocol part (http://)
+    return this.http.get('http://localhost:8081/api/product-boycotts'); // Add the protocol part (http://)
   }
 
 
-  private backendUrl = 'http://localhost:8080/api/product-boycotts'; // Replace with your actual backend URL
+  private backendUrl = 'http://localhost:8081/api/product-boycotts'; // Replace with your actual backend URL
 
 
  

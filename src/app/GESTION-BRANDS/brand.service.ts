@@ -12,14 +12,14 @@ export class BrandService {
   constructor(private http: HttpClient) {}
 
 
-  private backendUrl = 'http://localhost:8080/api/brand-boycotts';
+  private backendUrl = 'http://localhost:8081/api/brand-boycotts';
   createBrand(formData: any): Observable<any> {
     return this.http.post<any>(`${this.backendUrl}`, formData);
   }
 
 
   getAllBrands() {
-    return this.http.get('http://localhost:8080/api/brand-boycotts'); // Add the protocol part (http://)
+    return this.http.get('http://localhost:8081/api/brand-boycotts'); // Add the protocol part (http://)
   }
 
 

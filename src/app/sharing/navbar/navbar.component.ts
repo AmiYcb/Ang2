@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SearchServiceService } from '../search-service.service';
+import { StateManagerService } from 'src/app/Adm/serviceslogin/state-manager.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar2',
@@ -8,6 +10,19 @@ import { SearchServiceService } from '../search-service.service';
 })
 export class NavbarComponent {
 
+  
+ 
+  constructor(private stateManagerService:StateManagerService,private router:Router){}
+
+  logout() {
+    // @ts-ignore
+    this.stateManagerService.clearCurrentUser;
+    this.router.navigate(['/']);
+    
+  }
+  
+
+  name=this.stateManagerService.currentUserValue.username;
   isOpen: boolean = false;
   @ViewChild('dropdown') dropdown!: ElementRef;
 

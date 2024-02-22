@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { ProdService } from 'src/app/GESTION-PRODUITS/AddProd/prod.service';
 import { ModalComponent } from 'src/app/sharing/modal/modal.component';
+import { TabService } from 'src/app/tab/tab.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,7 +17,7 @@ import Swal from 'sweetalert2';
 export class AccComponent {
   modalResult: any;
 
-  constructor(private router: Router,private prodService: ProdService,private dialog: MatDialog,private fb: FormBuilder, private http: HttpClient) {
+  constructor(private router: Router,private prodService: TabService,private dialog: MatDialog,private fb: FormBuilder, private http: HttpClient) {
    
   }
 
@@ -32,21 +34,73 @@ export class AccComponent {
 
   searchQuery: string = ''; 
 
-  // lewed() {
-  //   console.log('Search query:', this.searchQuery); // Print the search query to the console
-  // }
+ 
 
   productBarcode: string = '';
 
+  getProducts() {
+   
+  }
+
   lewed() {
-    console.log('Search query:', this.searchQuery); // Print the search query to the console
-  
-    if (this.searchQuery === this.productBarcode) {
-      Swal.fire('Danger', 'this product is boycoted ', 'success'); // Display a success alert with '0' if the search query matches the product barcode
+    if (this.searchQuery) {
+      this.prodService.getAllProducts().subscribe((products: any) => {
+        // Find product where searchQuery matches the product's barcode
+        const foundProduct = products.find((product: any) => product.barcode === this.searchQuery);
+        if (foundProduct) {
+          // Navigate to the 'result' route with product details as parameter
+          this.router.navigate(['prodView', foundProduct.id]);
+        } else {
+          // Use SweetAlert to display error message
+          Swal.fire({
+            icon: 'error',
+            title: 'Product Not Found',
+            text: 'The product with the given barcode was not found.'
+          });
+        }
+      });
     } else {
-      Swal.fire('We dont know try another ', 'error'); // Display an error alert with '-1' if the search query does not match the product barcode
+      // Use SweetAlert to display warning message
+      Swal.fire({
+        icon: 'warning',
+        title: 'Empty Search Query',
+        text: 'Please enter a valid barcode.'
+      });
     }
   }
+ 
+  // lewed() {
+  //   if (this.searchQuery) {
+  //     this.prodService.getAllProducts().subscribe((products: any) => {
+  //       // Find product where searchQuery matches the product's barcode
+  //       const foundProduct = products.find((product: any) => product.barcode === this.searchQuery);
+  //       if (foundProduct) {
+  //         // Use SweetAlert to display success message
+  //         Swal.fire({
+  //           icon: 'success',
+  //           title: 'Product Found',
+  //           text: `Product: ${JSON.stringify(foundProduct.libelle)} is boycoted`
+  //         });
+  //       } else {
+  //         // Use SweetAlert to display error message
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Product Not Found',
+  //           text: 'The product with the given barcode was not found.'
+  //         });
+  //       }
+  //     });
+  //   } else {
+  //     // Use SweetAlert to display warning message
+  //     Swal.fire({
+  //       icon: 'warning',
+  //       title: 'Empty Search Query',
+  //       text: 'Please enter a valid barcode.'
+  //     });
+  //   }
+  // }
+  
+   
   
 
 }
