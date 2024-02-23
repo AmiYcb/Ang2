@@ -25,10 +25,10 @@ import { ViewProdUserComponent } from './Scan/view-prod-user/view-prod-user.comp
 const routes: Routes = [
 
   {path:"", component:AccComponent },
-  {path:"/gestion-voiture/AboutUs", component:AboutUsComponent },
-  {path:"gestion-voiture/Contact", component:ContactUsComponent },
-  {path:"/gestion-voiture/Brands", component:BrandsComponent },
-  {path:"gestion-voiture/login", component:LoginComponent },
+  {path:"AboutUs", component:AboutUsComponent },
+  {path:"Contact", component:ContactUsComponent },
+  {path:"Brands", component:BrandsComponent },
+  {path:"login", component:LoginComponent },
   
   {path:"test1", component:TestComponent },
 
