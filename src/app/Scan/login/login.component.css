@@ -1,0 +1,33 @@
+body {
+  background-color: #f8f9fa; /* Light gray background color */
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.login-form {
+  background-color: #ffffff; /* White background color for the form */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  height: 40px;
+}
+
+.login-btn {
+  background-color: #007bff; /* Blue color for the login button */
+  color: #ffffff; /* White text color */
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}

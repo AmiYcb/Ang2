@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<!-- brands.component.html -->
+
+<div class="container">
+    <h2> Brands</h2>
+  
+    <!-- Card Grid -->
+    <div class="card-grid" [@scrollAnimation]="scrollState">
+      <div *ngFor="let item of paginatedProducts; let i = index" class="brand-card">
+        <img [src]="item.imageUrl" alt="{{ item.brandName }}" class="card-image">
+        <div class="card-content">
+          <h3>{{ item.brandName }}</h3>
+          <p>{{ item.boycottReasons }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 0">Previous</button>
+      <span>{{ currentPage + 1 }} / {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<button mat-icon-button style="float: right; margin: 5px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+</button>
+
+<mat-dialog-content style="padding: 20px;">
+    <header style="margin-bottom: 20px;">
+        <h1 style="font-size: 24px; font-weight: bold; color: #333;">New Suggestion</h1>
+    </header>
+
+    <div style="margin-bottom: 20px;">
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Image File</mat-label>
+            <input matInput [placeholder]="'No file chosen'" [value]="selectedFile?.name" disabled>
+            <input #fileInput name="imageUrl" type="file" id="example-email" accept="image/*" (change)="onFileSelected($event)" hidden>
+            <mat-icon matSuffix (click)="fileInput.click()" style="cursor: pointer;">attach_file</mat-icon>
+        </mat-form-field>
+        <img [src]="imgUrl" height="150" width="150" *ngIf="imgUrl" style="margin-top: 10px;">
+    </div>
+
+    <mat-form-field appearance="fill" style="margin-bottom: 20px;">
+        <mat-label>Product Name</mat-label>
+        <input matInput placeholder="Enter product name" [(ngModel)]="productName">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" style="margin-bottom: 20px;">
+        <mat-label>Brand Name</mat-label>
+        <input matInput placeholder="Enter brand name" [(ngModel)]="brandName">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" style="margin-bottom: 20px;">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Enter description" [(ngModel)]="description"></textarea>
+        <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+    
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" style="margin-top: 20px;">
+    <button mat-raised-button color="primary" (click)="submit()">Save</button>
+</mat-dialog-actions>

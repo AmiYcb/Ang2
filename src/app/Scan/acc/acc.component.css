@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+#google-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#search-container {
+  text-align: center;
+}
+
+
+
+.search-box {
+  width: 600px;
+  padding: 15px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-buttons {
+  margin-top: 20px;
+}
+
+.google-search-btn {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.feeling-lucky-btn {
+  background-color: #f8f9fa;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+/* Adjust the opacity of the .google-logo class */
+.google-logo {
+  width: 200px; /* Set the width according to your design */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Ensure it behaves as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+  margin-bottom: 20px; /* Add some margin below the image */
+  border-radius: 8px; /* Optional: Add a border-radius for a rounded look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+  opacity: 0.5; /* Adjust the opacity value (0.8 is an example) */
+}
+
+
+
+
+.google-search-btn {
+  background-color: #176B87;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.google-search-btn:hover {
+  background-color: #3367d6; /* Change color on hover */
+}
+
+/* Styles for the Feeling Lucky button */
+.feeling-lucky-btn {
+  background-color: #f8f9fa;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.feeling-lucky-btn:hover {
+  background-color: #e0e0e0; /* Change color on hover */
+}

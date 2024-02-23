@@ -1,0 +1,112 @@
+.sub-menu {
+    display: none;
+  }
+  
+  /* Show the submenu when its parent has a "collapsed" class */
+  .menu-item.collapsed .sub-menu {
+    display: block;
+  }
+
+
+  /* Style for each individual card */
+.card {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.p-5 {
+  padding: 1.5rem;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.inline-flex {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+}
+
+.bg-success {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.me-1 {
+  margin-right: 0.25rem;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.bg-danger {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+/* Custom styles */
+.ms-200px {
+  margin-left: 200px; /* Adjust the margin-left to match the width of the sidebar */
+  padding-left: 20px; /* Adjust as needed */
+}
+
+/* Style for the sidebar */
+.position-fixed {
+  position: fixed;
+  z-index: 1030; /* Ensure sidebar is above other content */
+  top: 0;
+  left: 0;
+  /* overflow-y: auto;  */
+  border-right: 1px solid #dee2e6; /* Add border to the right for separation */
+}

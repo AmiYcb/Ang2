@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Get in Touch</h2>
+          <p>
+            We'd love to hear from you! Use the form below to send us a message.
+          </p>
+          <ul>
+            <li>Email: info@example.com</li>
+            <li>Phone: (222) 45 99 00 77</li>
+            <li>Address: 123 hun , NKC, Country</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <form (ngSubmit)="submit()">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="productName" [(ngModel)]="productName" required>
+        
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="brandName" [(ngModel)]="brandName" required>
+        
+            <label for="message">Your Message</label>
+            <textarea id="message" name="description" rows="4" [(ngModel)]="description" required></textarea>
+        
+            <button type="submit">Send Message</button>
+        </form>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Boycot .</p>
+  </footer>
+
+</body>
+</html>

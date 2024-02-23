@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Override Bootstrap default padding */
+        .no-gutters {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <app-navbar2 class="full-width-navbar" ></app-navbar2> 
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            <div class="col-md-3 p-0" style="position: relative; right: 1%;">
+                <app-sidebar></app-sidebar>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9" style="position: relative; right: 5%;">
+                <div class="app-content">
+                    <main class="p-6">
+                        <!-- Search Bar -->
+                        <!-- <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="search" class="form-input px-8 rounded-full  bg-gray-500/10 border-transparent focus:border-transparent" placeholder="Search...">
+                        <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3"></button> -->
+                        <!-- End Search Bar -->
+
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="text-slate-900 text-lg font-medium">Dashboard</h4>
+
+                            <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700">Dashboard</a>
+                                <i class="bx bx-chevron-right text-lg flex-shrink-0 text-slate-400"></i>
+                                <a href="#" class="text-sm font-medium text-slate-700" aria-current="page">Products</a>
+                            </div>
+                        </div>
+                          
+                        
+
+                        <!-- Table -->
+                        <div class="container" style="width: 110%;">
+                        <div class="mat-elevation-z10">
+                            <br>
+                            <!-- search bar -->
+                        <div class="md:flex hidden items-center relative" style="margin-top: -10px; position: relative; right: 1px;">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            </div>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input type="search" class="form-input px-4 rounded-full bg-gray-500/10 border-transparent focus:border-transparent text-sm" placeholder="Search..." style="width: 200px; margin-left: auto;">
+                            <!-- <i class="ph ph-magnifying-glass text-base"></i> -->
+                        
+                            <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3"></button>
+                        </div>
+                        
+
+
+                              <!-- wvat search hun -->
+
+                            <table mat-table [dataSource]="dataSource" matSort>
+
+                                <!-- Image Column -->
+                                <ng-container matColumnDef="imageUrl">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+                                    <td mat-cell *matCellDef="let product">
+                                        <img src="{{product.imageUrl}}" style="width: 100px; height: 100px;">
+                                    </td>
+                                </ng-container>
+
+                                <!-- Libelle Column -->
+                                <ng-container matColumnDef="libelle">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Libelle </th>
+                                    <td mat-cell *matCellDef="let product"> {{product.libelle}} </td>
+                                </ng-container>
+
+                                <!-- Brand Column -->
+                                <ng-container matColumnDef="brand">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Brand </th>
+                                    <td mat-cell *matCellDef="let product"> {{product.brandName}} </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="alternative">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                                    <td mat-cell *matCellDef="let product"> {{product.alternative}} </td>
+                                </ng-container>
+
+                                <!-- Action Column -->
+                                <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <button mat-icon-button color="dark" (click)="Edit(row.id)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+
+                                        <button mat-icon-button color="dark" (click)="View(row.id)">
+                                            <mat-icon>visibility</mat-icon>
+                                        </button>
+
+                                        <button mat-icon-button color="warn" (click)="onDelete(row.id)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                <!-- Row shown when there is no matching data. -->
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+                                        No data matching the filter "{{input.value}}"
+                                    </td>
+                                </tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                        </div>
+                        <!-- End Table -->
+                    </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

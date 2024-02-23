@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+
+<div class="ver">
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <!-- Main Content -->
+        <div class="col-md-9" style="position: relative; right: 5%;">
+            <div class="app-content">
+                <main class="p-6">
+                    <div class="flex flex-col gap-6">
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="grid">
+                                    <!-- Image Column -->
+                                    <div>
+                                        <img class="product-image" [src]="prod.imageUrl">
+                                    </div>
+                                    <!-- Details Column -->
+                                    <div>
+                                        <div>
+                                            <label for="simpleinput" class="text-gray-800 text-sm font-medium inline-block mb-2">Code Bar</label>
+                                            {{ prod.barcode }}
+                                        </div>
+                                        <div>
+                                            <label for="example-email" class="text-gray-800 text-sm font-medium inline-block mb-2">Libelle</label>
+                                            {{ prod.libelle }}
+                                        </div>
+                                        <div>
+                                            <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Status</label>
+                                            {{ prod.alternative }}
+                                        </div>
+                                        <div>
+                                            <label for="example-select" class="text-gray-800 text-sm font-medium inline-block mb-2">Brands</label>
+                                            {{ prod.brandname }}
+                                        </div>
+                                        <div>
+                                            <label for="example-password" class="text-gray-800 text-sm font-medium inline-block mb-2">Boycott reasons</label>
+                                            {{ prod.reasons }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

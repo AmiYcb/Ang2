@@ -1,0 +1,141 @@
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/gestion-voiture/assets/images/favicon.ico">
+
+  <!-- App css -->
+  <link href="/gestion-voiture/assets/css/theme.min.css" rel="stylesheet" type="text/css">
+  <link href="/gestion-voiture/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+
+<div class="app-menu">
+    <!-- <a href="/assets/" class="logo-box">
+        <img src="/assets/images/logo-light.png" class="logo-light h-6" alt="Light logo">
+        <img src="/assets/images/logo-dark.png" class="logo-dark h-6" alt="Dark logo">
+    </a> -->
+
+    <!--- Menu -->
+   
+
+    <div data-simplebar >
+        <ul class="menu" data-fc-type="accordion">
+            <li class="menu-title">Menu</li>
+
+            <li class="menu-item">
+                <a href="/gestion-voiture/dash" class="menu-link waves-effect">
+                    <span class="menu-icon"><i class="ph-duotone ph-house"></i></span>
+                    <span class="menu-text"> Dashboard </span>
+
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/gestion-voiture/sugg" class="menu-link waves-effect">
+                    <span class="menu-icon"><i class="ph-duotone ph-question"></i></span>
+                    <span class="menu-text"> Suggestions </span>
+                    <span class="badge bg-primary rounded ms-auto">{{nbSugg}}</span>
+                </a> 
+            </li>
+           
+
+            <li class="menu-title">Custom</li>
+
+            <li class="menu-item collapsed" data-fc-type="collapse">
+               
+                   <p class="menu-link waves-effect">
+                    <span class="menu-icon"><i class="ph-duotone ph-file"></i></span>
+                    <span class="menu-text">Tables</span>
+                </p> 
+                  
+             
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="/gestion-voiture/ProductList" class="menu-link">
+                            <span class="menu-dot"></span>
+                            <span class="menu-text">Products</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/gestion-voiture/BrandsList" class="menu-link">
+                            <span class="menu-dot"></span>
+                            <span class="menu-text">Brands</span>
+                        </a>
+                    </li>
+
+
+                  
+                  
+                </ul>
+            </li>
+
+
+            
+
+            <li class="menu-item collapsed" data-fc-type="collapse">
+               
+                <p class="menu-link waves-effect">
+                    <span class="menu-icon"><i class="ph-duotone ph-sign-in"></i></span>
+                    <span class="menu-text"> Add </span>
+                   </p>
+
+             <ul class="sub-menu">
+                 <li class="menu-item">
+                     <a href="/gestion-voiture/prod" class="menu-link">
+                         <span class="menu-dot"></span>
+                         <span class="menu-text">Product</span>
+                     </a>
+                 </li>
+                 <li class="menu-item">
+                    <a href="/gestion-voiture/addBrand" class="menu-link">
+                        <span class="menu-dot"></span>
+                        <span class="menu-text">Brands</span>
+                    </a>
+                </li>
+
+
+
+               
+                
+             </ul>
+         </li>
+
+
+         <span class="menu-arrow"></span>
+
+         
+    
+         
+
+         
+
+            
+         
+
+         
+         
+                
+          
+
+          
+         
+         
+
+           
+         
+
+           
+         
+                  
+         
+
+            <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link">
+                    <span class="menu-icon">
+                        <i class="ph-duotone ph-seal-check"></i>
+                    </span>
+                    <span class="menu-text"> Log out </span>
+                    <span class="badge bg-danger rounded ms-auto">Hot</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
